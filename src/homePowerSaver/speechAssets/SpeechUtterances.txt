@@ -1,0 +1,4 @@
+PowerSave Turn PowerSave {On}
+PowerSave Turn PowerSave {On for home}
+PowerSave Turn PowerSave {Off}
+

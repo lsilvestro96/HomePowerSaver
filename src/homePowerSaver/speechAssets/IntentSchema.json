@@ -1,0 +1,28 @@
+{ 
+   "intents": [ 
+     { 
+       "intent": "PowerSave",
+       
+       
+       "slots": [ 
+         { 
+           "name" : "State", 
+           "type": "LIST_OF_States" 
+         } 
+       ] 
+     }, 
+     { 
+       "intent": "AMAZON.HelpIntent" 
+     }, 
+     { 
+       "intent": "AMAZON.StopIntent" 
+     }, 
+     { 
+       "intent": "AMAZON.CancelIntent" 
+     }
+ 
+   ] 
+   } 
+		
+
+}
