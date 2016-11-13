@@ -59,7 +59,7 @@ public class PowerSpeechlet implements Speechlet {
 
 	@Override
 	public void onSessionEnded(SessionEndedRequest request, Session session) throws SpeechletException {
-		// TODO Auto-generated method stub
+		//Session ended
 
 	}
 	
@@ -76,7 +76,7 @@ public class PowerSpeechlet implements Speechlet {
 	}
 	
 	private SpeechletResponse togglePowerSave(String value, Intent intent) {
-		//TODO Communicate with smart things
+		
 		return null;
 	}
 
