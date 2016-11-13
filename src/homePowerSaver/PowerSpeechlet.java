@@ -39,10 +39,22 @@ public class PowerSpeechlet implements Speechlet {
 		if (intentName.equals("PowerSave")) {
 			return processIntent(intent);
 		}
-		
-		
-		
-		return null;
+		else if (intentName.equals("AMAZON.HelpIntent")) {
+			return getHelp();
+		}
+		else if (intentName.equals("AMAZON.StopIntent")) {
+			PlainTextOutputSpeech salutation = new PlainTextOutputSpeech();
+			salutation.setText("Goodbye!");
+			return SpeechletResponse.newTellResponse(salutation);
+		}
+		else if (intentName.equals("AMAZON.CancelIntent")) {
+			PlainTextOutputSpeech salutation = new PlainTextOutputSpeech();
+			salutation.setText("Goodbye!");
+			return SpeechletResponse.newTellResponse(salutation);
+		}
+		else {
+			throw new SpeechletException("Invalid Intent");
+		}
 	}
 
 	@Override
@@ -64,7 +76,7 @@ public class PowerSpeechlet implements Speechlet {
 	}
 	
 	private SpeechletResponse togglePowerSave(String value, Intent intent) {
-		
+		//TODO Communicate with smart things
 		return null;
 	}
 
