@@ -1,1 +1,3 @@
 bin/
+/aws-lambda-java-core-1.0.0.jar
+/commons-io-2.5.jar
