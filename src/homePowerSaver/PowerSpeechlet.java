@@ -10,6 +10,7 @@ import com.amazon.speech.speechlet.SessionStartedRequest;
 import com.amazon.speech.speechlet.Speechlet;
 import com.amazon.speech.speechlet.SpeechletException;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazon.speech.speechlet.User;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 
@@ -17,7 +18,7 @@ public class PowerSpeechlet implements Speechlet {
 	
 	@Override
 	public void onSessionStarted(SessionStartedRequest request, Session session) throws SpeechletException {
-		// TODO Auto-generated method stub
+		
 
 	}
 
@@ -37,7 +38,7 @@ public class PowerSpeechlet implements Speechlet {
 		}
 		
 		if (intentName.equals("PowerSave")) {
-			return processIntent(intent);
+			return processIntent(intent, session);
 		}
 		else if (intentName.equals("AMAZON.HelpIntent")) {
 			return getHelp();
@@ -64,19 +65,25 @@ public class PowerSpeechlet implements Speechlet {
 	}
 	
 	
-	private SpeechletResponse processIntent(Intent intent) {
+	private SpeechletResponse processIntent(Intent intent, Session session) {
 		Slot stateSlot = intent.getSlot("LIST_OF_STATES");
 		if (stateSlot != null && stateSlot.getValue() != null) {
 			String value = stateSlot.getValue();
-			return togglePowerSave(value,intent);
+			return togglePowerSave(value,session);
 		}
 		else {
 			return getHelp();
 		}
 	}
 	
-	private SpeechletResponse togglePowerSave(String value, Intent intent) {
-		
+	private SpeechletResponse togglePowerSave(String value, Session session) {
+		User user = session.getUser();
+		String accessToken = user.getAccessToken();
+		NestWrapper nw;
+		if (accessToken != null) {
+			nw = new NestWrapper(accessToken);
+			
+		}
 		return null;
 	}
 
