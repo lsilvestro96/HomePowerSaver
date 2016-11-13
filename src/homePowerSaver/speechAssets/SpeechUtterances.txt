@@ -1,4 +1,3 @@
-PowerSave Turn PowerSave {On}
-PowerSave Turn PowerSave {On for home}
-PowerSave Turn PowerSave {Off}
-
+PowerSave Turn Power Save {State}
+PowerSave Turn Power Save for home {State}
+PowerSave Turn Power Save {State} 

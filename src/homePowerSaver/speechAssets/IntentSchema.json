@@ -1,8 +1,7 @@
 { 
    "intents": [ 
      { 
-       "intent": "PowerSave",
-       
+       "intent": "PowerSave",   
        
        "slots": [ 
          { 
@@ -22,7 +21,4 @@
      }
  
    ] 
-   } 
-		
-
-}
+} 
